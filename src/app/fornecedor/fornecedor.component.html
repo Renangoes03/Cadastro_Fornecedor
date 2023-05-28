@@ -1,0 +1,82 @@
+<br><table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Ativo</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Contato</th>
+            <th class="d-flex justify-content-end" scope="col">Opções</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <tr *ngFor="let fornecedor of fornecedor">
+            <th scope="row"> {{fornecedor.id}}</th>
+            <td>{{fornecedor.name}}</td>
+            <td>{{fornecedor.active}}</td>
+            <td>{{fornecedor.category}}</td>
+            <td>{{fornecedor.contact}}</td>
+            <td class="d-flex justify-content-end">
+                <button class="btn btn-danger me-1" (click)="remove(fornecedor)">Excluir</button>
+                <button class="btn btn-primary" (click)="edit(fornecedor)">Editar</button>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+
+<div class="row">
+    <div class="col-3 m-auto">
+        <form [formGroup]="formGroupClient">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nome: </label>
+                <input type="text" formControlName="name" class="form-control" id="nome" placeholder="Nome">
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p> Ativo: </p>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" formControlName="active"
+                                id="ativo" name="radio-stacked" required>
+                            <label class="form-check-label" for="ativo"><strong>Sim</strong></label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input type="radio" class="form-check-input" formControlName="active"
+                                id="validationFormCheck3" name="radio-stacked" required>
+                            <label class="form-check-label" for="validationFormCheck3"><strong>Não</strong></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-4">
+                            <label for="serie" class="form-label">Contato:</label>
+                            <input type="email" formControlName="contact" class="form-control" id="Contato"
+                                placeholder="Telefone">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <p>Selecione o tipo de compra:</p>
+                            <select class="form-select" formControlName="category" aria-label="select">
+                                <option value="Nacional">Nacional</option>
+                                <option value="Internacional">Internacional</option>
+                                <option value="Regional">Regional</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3 d-flex justify-content-end">
+                <button class="btn btn-primary" (click)="salvar()">Salvar</button>
+            </div>
+        </form>
+    </div>
+</div>

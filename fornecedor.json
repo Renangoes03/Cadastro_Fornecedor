@@ -1,0 +1,11 @@
+{
+  "fornecedor": [
+    {
+      "id": 1,
+      "name": "Renan Goes Santos",
+      "active": "",
+      "contact": "121",
+      "category": "Internacional"
+    }
+  ]
+}
