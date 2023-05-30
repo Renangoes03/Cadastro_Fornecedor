@@ -3,8 +3,8 @@
     {
       "id": 1,
       "name": "Renan Goes Santos",
-      "active": "",
-      "contact": "121",
+      "active": false,
+      "contact": "1212",
       "category": "Internacional"
     }
   ]
